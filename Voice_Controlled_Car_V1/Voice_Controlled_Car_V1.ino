@@ -143,11 +143,11 @@ void loop() {
 
     if (readvoice == "increase")
     {
-      if (motorSpeed > 0) {
-        motorSpeed -= 30;
-      }
-      analogWrite(ENA, motorSpeed);
-      analogWrite(ENB, motorSpeed);
+        if (motorSpeed < 255) {
+          motorSpeed += 30;
+        }
+        analogWrite(ENA, motorSpeed);
+        analogWrite(ENB, motorSpeed);
     }
 
     if (readvoice == "decrease")
